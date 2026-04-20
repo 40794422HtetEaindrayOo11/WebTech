@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Card Game</title>
+  <link rel="stylesheet" href="css/gameChoice.css">
+</head> 
+
+<body class="game-page">
+
+<!-- background audio -->
+<audio id="bgMusic" loop>
+  <source src="Audio/BackgorundMusic.mp3" type="audio/mpeg">
+</audio>
+
+<!-- setting modal -->
+<div id="settingsModal" class="settings-modal">
+  <div class="settings-box">
+    <span class="close-settings" onclick="closeSettings()">×</span>
+    <h2>Settings</h2>
+
+    <button id="musicBtn" class="settings-action" onclick="toggleMusic()">🔊 Music On</button>
+    <button class="settings-action" onclick="toggleThemeOptions()">🎨 Theme</button>
+
+    <div id="themeOptions" class="theme-options">
+      <button onclick="setTheme('light')">☀ Light</button>
+      <button onclick="setTheme('dark')">🌙 Dark</button>
+    </div>
+    <button class="settings-action" onclick="goHome()">🏠 Home</button>
+  </div>
+</div>
+
+<!-- nav bar of game page -->
+<nav class="game-navbar home-navbar">
+  <div class="nav-content">
+    <h1>MEMORY CARD GAME</h1>
+
+    <div class="nav-actions">
+      <button class="nav-btn" onclick="goToHome()">Home</button>
+      <button class="nav-btn" onclick="openHowToPlay()">How to Play</button>
+      <button class="nav-settings" onclick="openSettings()">⚙️</button>
+    </div>
+  </div>
+
+  <div class="nav-wave"></div>
+</nav>
+
+<!-- main content of game's category page -->
+<main class="game-main">
+
+  <div class="container">
+
+    <div class="category-card advanced-card">
+      <div class="ribbon">Advanced</div>
+      
+      <div class="left">
+        <div class="preview-box symbols"></div>
+        <span>Math Symbols</span>
+      </div>
+
+      <div class="level-buttons">
+        <button onclick="startGame('symbols','easy')">Easy</button>
+        <button onclick="startGame('symbols','medium')">Medium</button>
+        <button onclick="startGame('symbols','hard')">Hard</button>
+      </div>
+    </div>
+    
+    <div class="category-card">
+      <div class="left">
+        <div class="preview-box numbers"></div>
+        <span>Numbers</span>
+      </div>
+
+      <div class="level-buttons">
+        <button onclick="startGame('numbers','easy')">Easy</button>
+        <button onclick="startGame('numbers','medium')">Medium</button>
+        <button onclick="startGame('numbers','hard')">Hard</button>
+      </div>
+    </div>
+
+    <div class="category-card">
+      <div class="left">
+        <div class="preview-box fruits"></div>
+        <span>Fruits</span>
+      </div>
+
+      <div class="level-buttons">
+        <button onclick="startGame('fruits','easy')">Easy</button>
+        <button onclick="startGame('fruits','medium')">Medium</button>
+        <button onclick="startGame('fruits','hard')">Hard</button>
+      </div>
+    </div>
+
+    <div class="category-card">
+      <div class="left">
+        <div class="preview-box animals"></div>
+        <span>Animals</span>
+      </div>
+
+      <div class="level-buttons">
+        <button onclick="startGame('animals','easy')">Easy</button>
+        <button onclick="startGame('animals','medium')">Medium</button>
+        <button onclick="startGame('animals','hard')">Hard</button>
+      </div>
+    </div>
+
+    <div class="category-card">
+      <div class="left">
+        <div class="preview-box colors"></div>
+        <span>Colors</span>
+      </div>
+
+      <div class="level-buttons">
+        <button onclick="startGame('colors','easy')">Easy</button>
+        <button onclick="startGame('colors','medium')">Medium</button>
+        <button onclick="startGame('colors','hard')">Hard</button>
+      </div>
+
+      
+    </div>
+
+    <div class="category-card">
+  <div class="left">
+    <div class="preview-box vehicles"></div>
+    <span>Vehicles</span>
+  </div>
+
+  <div class="level-buttons">
+    <button onclick="startGame('vehicles','easy')">Easy</button>
+    <button onclick="startGame('vehicles','medium')">Medium</button>
+    <button onclick="startGame('vehicles','hard')">Hard</button>
+  </div>
+</div>
+
+<div class="category-card">
+  <div class="left">
+    <div class="preview-box emojis"></div>
+    <span>Emojis</span>
+  </div>
+
+  <div class="level-buttons">
+    <button onclick="startGame('emojis','easy')">Easy</button>
+    <button onclick="startGame('emojis','medium')">Medium</button>
+    <button onclick="startGame('emojis','hard')">Hard</button>
+  </div>
+</div>
+
+<div class="category-card">
+  <div class="left">
+    <div class="preview-box shapes"></div>
+    <span>Shapes</span>
+  </div>
+
+  <div class="level-buttons">
+    <button onclick="startGame('shapes','easy')">Easy</button>
+    <button onclick="startGame('shapes','medium')">Medium</button>
+    <button onclick="startGame('shapes','hard')">Hard</button>
+  </div>
+</div>
+
+  </div>
+</main>
+
+
+<!-- HOW TO PLAY MODAL -->
+<div id="howToPlayModal" class="modal">
+  <div class="modal-content advanced-modal">
+
+    <span class="close-btn" onclick="closeHowToPlay()">×</span>
+
+    <h2>🎮 How to Play</h2>
+    <p class="subtitle">Match cards, beat the timer, and test your memory!</p>
+
+    <ul class="steps">
+      <li>🎯 Choose your difficulty level (Easy, Medium, Hard)</li>
+      <li>🃏 Flip two cards to reveal symbols</li>
+      <li>🔍 Find matching pairs</li>
+      <li>❌ Wrong match? Cards flip back</li>
+      <li>✅ Match all pairs to win</li>
+      <li>⏱ Finish before time runs out</li>
+    </ul>
+
+    <button class="start-btn" onclick="closeHowToPlay()">Got it!</button>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html> 

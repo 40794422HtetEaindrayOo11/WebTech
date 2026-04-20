@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Card Game – Welcome</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="home-page">
+
+<!-- audio -->
+<audio id="bgMusic" loop>
+  <source src="Audio/BackgorundMusic.mp3" type="audio/mpeg">
+</audio>
+
+<!-- setting modal -->
+<div id="settingsModal" class="settings-modal">
+  <div class="settings-box">
+    <span class="close-settings" onclick="closeSettings()">×</span>
+    <h2>Settings</h2>
+    <button id="musicBtn" class="settings-action" onclick="toggleMusic()">🔊 Music On</button>
+    <button class="settings-action" onclick="toggleThemeOptions()">🎨 Theme</button>
+
+    <div id="themeOptions" class="theme-options">
+      <button onclick="setTheme('light')">☀ Light</button>
+      <button onclick="setTheme('dark')">🌙 Dark</button>
+    </div>
+  </div>
+</div>
+
+<!--nav -->
+<nav class="game-navbar home-navbar">
+  <div class="nav-content">
+    <h1>MEMORY CARD GAME</h1>
+    <div class="nav-actions">
+      <button class="nav-btn" onclick="goToGames()">Games</button>
+      <button class="nav-settings" onclick="openSettings()">⚙️</button>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero-section">
+  <div class="welcome-section">
+
+    <div class="welcome-text">
+      <h2>Welcome to the Memory Card Game</h2>
+      <p>
+        Train your brain and improve your memory by matching pairs of cards.
+        Choose different categories and difficulty levels to challenge yourself
+        and have fun while learning.
+      </p>
+
+      <button class="welcome-btn" onclick="openHowToPlay()">How to Play</button>
+      <button class="welcome-btn" onclick="goToGames()">Games Choice</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Gif Show-->
+<section class="gif-section">
+  <div class="welcome-gif">
+    <img src="images/Gif2.gif" alt="Memory Cards Animation">
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Purpose & Aim of Memory Card Game</h4>
+      <p>The game is designed to improve memory retention, concentration 
+        and pattern recognition. 
+        The game also aims to support learning through play by offering 
+        multiple categories such as numbers, colors, animals, shapes, emojis, 
+        and mathematical symbols. 
+      </p>
+      <p> 
+        These categories help players develop subject-based 
+        familiarity while strengthening their short-term and visual memory skills.
+        the Memory Card Game serves both educational and entertainment purposes, making 
+        learning enjoyable while promoting mental agility and problem-solving skills.
+      </p>
+    </div>
+
+    <div class="footer-column footer-legal">
+      <h4>Legal</h4>
+      <p class="footer-copy">© 2026 Memory Card Game. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- HOW TO PLAY MODAL -->
+<div id="howToPlayModal" class="modal">
+  <div class="modal-content advanced-modal">
+
+    <span class="close-btn" onclick="closeHowToPlay()">×</span>
+
+    <h2>🎮 How to Play</h2>
+    <p class="subtitle">Match cards, beat the timer, and test your memory!</p>
+
+    <ul class="steps">
+      <li>🎯 Choose your difficulty level (Easy, Medium, Hard)</li>
+      <li>🃏 Flip two cards to reveal symbols</li>
+      <li>🔍 Find matching pairs</li>
+      <li>❌ Wrong match? Cards flip back</li>
+      <li>✅ Match all pairs to win</li>
+      <li>⏱ Finish before time runs out</li>
+    </ul>
+
+    <button class="start-btn" onclick="closeHowToPlay()">Got it!</button>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

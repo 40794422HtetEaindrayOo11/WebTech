@@ -1,0 +1,356 @@
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* THEME VARIABLES */
+:root {
+  --bg-color: #c3835c;
+  --panel-color: #ffffff;
+  --text-color: #222;
+  --nav-text-color: #ffffff;
+}
+
+body.dark {
+  --text-color: #f5f5f5;
+  --panel-color: #1e1e1e;
+  --bg-color: #121212;
+  --nav-text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* NAV BAR */
+.home-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgb(221, 118, 62);
+  z-index: 3000;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px 30px;
+}
+
+.home-navbar h1 {
+  color: var(--nav-text-color);
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: var(--nav-text-color);
+  padding: 8px 16px;
+  border-radius: 18px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+.nav-settings {
+  width: 50px;
+  height: 45px;
+  font-size: 22px;
+  border-radius: 20%;
+  border: 3px solid white;
+  background: linear-gradient(145deg, #db7d10, #d58813);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-settings:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: linear-gradient(145deg, #99b6f4, #3a98c4);
+}
+
+/* MAIN */
+.game-main {
+  padding-top: 100px;
+}
+
+/* GRID */
+.container {
+  padding: 60px;
+  border-radius: 15px;
+  background: transparent;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(300px, 380px));
+  gap: 35px;
+}
+
+/* CATEGORY CARD */
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 14px;
+  border-radius: 10px;
+  background-color: var(--panel-color);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* PREVIEW BOX */
+.preview-box {
+  width: 160px;
+  height: 160px;
+  border-radius: 20%;
+  margin-bottom: 15px;
+}
+
+/* IMAGES */
+.numbers { background: url("/WebTech/images/numbers.jpg") center/cover no-repeat; }
+.symbols { background: url("/WebTech/images/mathsymbols.jpg") center/cover no-repeat; }
+.fruits { background: url("/WebTech/images/fruits.jpg") center/cover no-repeat; }
+.animals { background: url("/WebTech/images/animals.jpg") center/cover no-repeat; }
+.colors { background: url("/WebTech/images/colors.jpg") center/cover no-repeat; }
+.vehicles { background: url("/WebTech/images/vehicles.jpg") center/cover no-repeat; }
+.emojis { background: url("/WebTech/images/emojis.jpg") center/cover no-repeat; }
+.shapes { background: url("/WebTech/images/shapes.jpg") center/cover no-repeat; }
+
+/* ADVANCED RIBBON */
+.advanced-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ribbon {
+  position: absolute;
+  top: 14px;
+  left: -45px;
+  background: #fb0505;
+  color: white;
+  padding: 6px 50px;
+  font-size: 12px;
+  font-weight: bold;
+  transform: rotate(-45deg);
+}
+
+/* TEXT */
+.left {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* BUTTONS */
+.level-buttons {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.level-buttons button {
+  background: linear-gradient(135deg, #e07911, #d67719);
+  border: 2px solid #555;
+  color: var(--text-color);
+  padding: 10px 26px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.level-buttons button:hover {
+  background: linear-gradient(135deg, #92c1ef, #66b2db);
+  transform: scale(1.05);
+}
+
+/* ========================= */
+/* SETTINGS MODAL */
+/* ========================= */
+.settings-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.settings-box {
+  background: var(--panel-color);
+  padding: 30px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.close-settings {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* SETTINGS BUTTONS */
+.settings-action {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #444;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.settings-action:hover {
+  background: #2196f3;
+  color: white;
+}
+
+/* ========================= */
+/* ADVANCED HOW TO PLAY MODAL */
+/* ========================= */
+/* ========================= */
+/* STEPS LIST (HOW TO PLAY) */
+/* ========================= */
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.steps li {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+
+  background: rgba(255, 152, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-weight: 500;
+  line-height: 1.5;
+
+  transition: all 0.25s ease;
+}
+.start-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* hover effect */
+.steps li:hover {
+  transform: translateX(6px);
+  background: rgba(255, 152, 0, 0.22);
+}
+
+/* dark mode */
+body.dark .steps li {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 520px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  position: relative;
+  transform: scale(0.9);
+  animation: popUp 0.35s ease forwards;
+}
+
+body.dark .modal-content {
+  background: rgba(40,40,40,0.9);
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.modal-content li {
+  list-style: none;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255,152,0,0.1);
+  transition: 0.25s;
+}
+
+.modal-content li:hover {
+  transform: translateX(5px);
+  background: rgba(255,152,0,0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes popUp {
+  to {transform: scale(1);}
+}
