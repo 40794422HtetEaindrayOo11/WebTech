@@ -42,25 +42,45 @@
 </div>
 </main>
 
-<!-- SETTINGS MODAL -->
-<div id="settingsModal" class="settings-modal">
-  <div class="settings-box">
-    <span class="close-settings" onclick="closeSettings()">×</span>
-    <h2>Settings</h2>
+<!-- setting modal -->
+<div id="settingsModal" class="modal">
+  <div class="settings-pro">
 
-    <button id="musicBtn" class="settings-action" onclick="toggleMusic()">
-      🔊 Music On
-    </button>
+    <span class="close-btn" onclick="closeSettings()">×</span>
 
-    <button class="settings-action" onclick="toggleThemeOptions()">🎨 Theme</button>
+    <h2>⚙️ Settings</h2>
+    <p class="subtitle">Customize your game experience</p>
 
-    <div id="themeOptions" class="theme-options">
-      <button onclick="setTheme('light')">☀ Light</button>
-      <button onclick="setTheme('dark')">🌙 Dark</button>
+    <!-- SOUND -->
+    <div class="setting-row">
+      <div class="setting-info">
+        <span class="icon">🎵</span>
+        <div>
+          <h4>Music</h4>
+          <p>Background sound</p>
+        </div>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" onclick="toggleMusic()">
+        <span class="slider"></span>
+      </label>
     </div>
 
-    <button class="settings-action" onclick="restartGame()">🔁 Restart</button>
-    <button class="settings-action" onclick="goHome()">🏠 Home</button>
+
+    <!-- NAV -->
+    <div class="setting-row">
+      <div class="setting-info">
+        <span class="icon">🏠</span>
+        <div>
+          <h4>Navigation</h4>
+          <p>Go back home</p>
+        </div>
+      </div>
+
+      <button class="nav-action" onclick="goToHome()">Home</button>
+    </div>
+
   </div>
 </div>
 
