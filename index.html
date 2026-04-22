@@ -14,17 +14,59 @@
 </audio>
 
 <!-- setting modal -->
-<div id="settingsModal" class="settings-modal">
-  <div class="settings-box">
-    <span class="close-settings" onclick="closeSettings()">×</span>
-    <h2>Settings</h2>
-    <button id="musicBtn" class="settings-action" onclick="toggleMusic()">🔊 Music On</button>
-    <button class="settings-action" onclick="toggleThemeOptions()">🎨 Theme</button>
+<div id="settingsModal" class="modal">
+  <div class="settings-pro">
 
-    <div id="themeOptions" class="theme-options">
-      <button onclick="setTheme('light')">☀ Light</button>
-      <button onclick="setTheme('dark')">🌙 Dark</button>
+    <span class="close-btn" onclick="closeSettings()">×</span>
+
+    <h2>⚙️ Settings</h2>
+    <p class="subtitle">Customize your game experience</p>
+
+    <!-- SOUND -->
+    <div class="setting-row">
+      <div class="setting-info">
+        <span class="icon">🎵</span>
+        <div>
+          <h4>Music</h4>
+          <p>Background sound</p>
+        </div>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" onclick="toggleMusic()">
+        <span class="slider"></span>
+      </label>
     </div>
+
+    <!-- THEME -->
+    <div class="setting-row">
+      <div class="setting-info">
+        <span class="icon">🎨</span>
+        <div>
+          <h4>Theme</h4>
+          <p>Light or Dark mode</p>
+        </div>
+      </div>
+
+      <div class="theme-switch">
+        <button onclick="setTheme('light')">☀</button>
+        <button onclick="setTheme('dark')">🌙</button>
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <div class="setting-row">
+      <div class="setting-info">
+        <span class="icon">🏠</span>
+        <div>
+          <h4>Navigation</h4>
+          <p>Go back home</p>
+        </div>
+      </div>
+
+      <button class="nav-action" onclick="goToHome()">Home</button>
+    </div>
+
   </div>
 </div>
 
@@ -33,6 +75,9 @@
   <div class="nav-content">
     <h1>MEMORY CARD GAME</h1>
     <div class="nav-actions">
+      <button class="nav-btn" onclick="window.location.href='leaderboard.html'">
+            🏆 Leaderboard
+      </button>
       <button class="nav-btn" onclick="goToGames()">Games</button>
       <button class="nav-settings" onclick="openSettings()">⚙️</button>
     </div>
@@ -112,6 +157,7 @@
 
   </div>
 </div>
+
 
 <script src="script.js"></script>
 </body>
