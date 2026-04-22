@@ -130,14 +130,14 @@ body {
 }
 
 /* IMAGES */
-.numbers { background: url("/WebTech/images/numbers.jpg") center/cover no-repeat; }
-.symbols { background: url("/WebTech/images/mathsymbols.jpg") center/cover no-repeat; }
-.fruits { background: url("/WebTech/images/fruits.jpg") center/cover no-repeat; }
-.animals { background: url("/WebTech/images/animals.jpg") center/cover no-repeat; }
-.colors { background: url("/WebTech/images/colors.jpg") center/cover no-repeat; }
-.vehicles { background: url("/WebTech/images/vehicles.jpg") center/cover no-repeat; }
-.emojis { background: url("/WebTech/images/emojis.jpg") center/cover no-repeat; }
-.shapes { background: url("/WebTech/images/shapes.jpg") center/cover no-repeat; }
+.numbers { background: url("../images/numbers.jpg") center/cover no-repeat; }
+.symbols { background: url("../images/mathsymbols.jpg") center/cover no-repeat; }
+.fruits { background: url("../images/fruits.jpg") center/cover no-repeat; }
+.animals { background: url("../images/animals.jpg") center/cover no-repeat; }
+.colors { background: url("../images/colors.jpg") center/cover no-repeat; }
+.vehicles { background: url("../images/vehicles.jpg") center/cover no-repeat; }
+.emojis { background: url("../images/emojis.jpg") center/cover no-repeat; }
+.shapes { background: url("../images/shapes.jpg") center/cover no-repeat; }
 
 /* ADVANCED RIBBON */
 .advanced-card {

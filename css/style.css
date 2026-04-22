@@ -93,7 +93,7 @@ body.dark {
   min-height: 100vh;
   background:
     linear-gradient(rgba(42, 41, 41, 0.35), rgba(255, 234, 234, 0.35)),
-    url("/WebTech/images/bestbackground.png") center / cover no-repeat;
+    url("../images/bestbackground.png") center / cover no-repeat;
   padding-top: 100px;
 }
 
