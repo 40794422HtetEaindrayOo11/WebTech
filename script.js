@@ -179,22 +179,40 @@ if (grid) {
       }, 800);
     }
   }
+
+
+let finalTimeGlobal = 0;
+let movesGlobal = 0;
+
 function endGame() {
   const finalTimeText = document.getElementById("time").textContent;
 
-  // convert mm:ss → seconds
   const parts = finalTimeText.split(":");
-  const timeLeft = parseInt(parts[0]) * 60 + parseInt(parts[1]);
+  finalTimeGlobal = parseInt(parts[0]) * 60 + parseInt(parts[1]);
+  movesGlobal = moves;
 
-  const playerName = prompt("Enter your name:");
+  const min = String(Math.floor(finalTimeGlobal / 60)).padStart(2, "0");
+  const sec = String(finalTimeGlobal % 60).padStart(2, "0");
+
+  document.getElementById("finalTime").textContent = `${min}:${sec}`;
+  // show name modal only
+  document.getElementById("resultModal").style.display = "flex";
+}
+
+function savePlayerScore() {
+  const input = document.getElementById("playerNameInput");
+  const playerName = input.value.trim() || "Player";
 
   const level = localStorage.getItem("selectedLevel");
-  saveScore(playerName, moves, timeLeft, level);
 
-  document.getElementById("finalMoves").textContent = moves;
-  document.getElementById("finalTime").textContent = finalTimeText;
+  // ✅ correct values
+  saveScore(playerName, movesGlobal, finalTimeGlobal, level);
 
-  document.getElementById("resultModal").style.display = "flex";
+  // close name modal
+  document.getElementById("resultModal").style.display = "none";
+
+  // show SUCCESS modal (not alert)
+  document.getElementById("savedModal").style.display = "flex";
 }
 
   function gameOver() {

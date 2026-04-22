@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
   background:
     linear-gradient(rgba(215, 178, 178, 0.35), rgba(181, 92, 92, 0.35)),
-    url("/WebTech/images/background.jpg") center / cover no-repeat;
+    url("../images/background.jpg") center / cover no-repeat;
 }
 
 /*TOP NAV BAR*/
@@ -53,6 +53,7 @@ body {
 
 .game-container {
   background: rgba(242, 244, 244, 0.96);
+  
   padding: 30px;
   border-radius: 22px;
   border-style:outset;
@@ -196,13 +197,19 @@ body {
 }
 
 .modal-content {
-  background: linear-gradient(145deg, #ffffff, #f3f9ff);
-  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.15); /* transparent */
+  backdrop-filter: blur(15px); /* glass effect */
+
+  border-radius: 22px;
   padding: 35px 30px;
   width: 340px;
   text-align: center;
-  animation: popBounce 0.6s ease;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+
+  animation: pop 0.4s ease;
 }
 
 @keyframes popBounce {
@@ -212,12 +219,14 @@ body {
 }
 
 .modal-content h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #ff9800;
-  text-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: #ffffff;
 
+  text-shadow:
+    0 3px 6px rgba(0,0,0,0.2),
+    0 0 12px rgba(255,140,0,0.6);
+}
 .modal-content p {
   font-size: 18px;
   margin: 6px 0;
@@ -229,6 +238,27 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
+}
+.modal-content input {
+  width: 85%;
+  padding: 12px;
+  margin: 15px 0;
+
+  border-radius: 20px;
+  border: 2px solid #ff9800;
+
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+
+  background: #fff;
+
+  transition: 0.3s;
+}
+
+.modal-content input:focus {
+  border-color: #ff5722;
+  box-shadow: 0 0 10px rgba(255,87,34,0.5);
 }
 
 /* FUN BUTTONS */
@@ -248,6 +278,17 @@ body {
 .modal-buttons button:hover {
   transform: scale(1.12) rotate(-2deg);
   box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+.modal-content::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 28px;
+  background: linear-gradient(45deg, #aeaeae, #ff5722, #ffeb3b);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.6;
 }
 
 .modal-buttons button:active {
@@ -544,3 +585,4 @@ body.dark .slider {
   from { transform: scale(0.85); opacity: 0; }
   to   { transform: scale(1); opacity: 1; }
 }
+

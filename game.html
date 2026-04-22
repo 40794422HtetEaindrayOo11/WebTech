@@ -87,13 +87,34 @@
 <!-- game complete modal -->
 <div id="resultModal" class="modal">
   <div class="modal-content">
-    <h2>🎉 Game Completed!</h2>
+
+    <h2>🎉 You Win!</h2>
+
+    <!-- NAME INPUT -->
+    <p>Enter your name:</p>
+    <input type="text" id="playerNameInput" placeholder="Your name..." />
+
+    <!-- GAME RESULT -->
     <p>Moves: <span id="finalMoves"></span></p>
     <p>Time: <span id="finalTime"></span></p>
 
+    <!-- BUTTONS -->
     <div class="modal-buttons">
-        <button onclick="playClick(); restartGame()">Restart</button>
-        <button onclick="playClick(); goHome()">Home</button>
+      <button onclick="savePlayerScore()">Save Score</button>
+      
+    </div>
+
+  </div>
+</div>
+
+<div id="savedModal" class="modal">
+  <div class="modal-content">
+    <h2>✅ Score Saved!</h2>
+    <p>Your score has been recorded 🎉</p>
+
+    <div class="modal-buttons">
+      <button onclick="restartGame()">Restart</button>
+      <button onclick="goHome()">Home</button>
     </div>
   </div>
 </div>
@@ -110,6 +131,7 @@
     </div>
   </div>
 </div>
+
 
 <script src="script.js"></script>
 </body>
