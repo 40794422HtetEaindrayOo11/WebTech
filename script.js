@@ -180,24 +180,98 @@ if (grid) {
     }
   }
 function endGame() {
-    document.getElementById("finalMoves").textContent = moves;
-    document.getElementById("finalTime").textContent =
-      document.getElementById("time").textContent;
+  const finalTimeText = document.getElementById("time").textContent;
 
-    document.getElementById("resultModal").style.display = "flex";
+  // convert mm:ss → seconds
+  const parts = finalTimeText.split(":");
+  const timeLeft = parseInt(parts[0]) * 60 + parseInt(parts[1]);
 
-    if (winSound) {
-      winSound.currentTime = 0;
-      winSound.volume = 0.6;
-      winSound.play();
-    }
-  }
+  const playerName = prompt("Enter your name:");
+
+  const level = localStorage.getItem("selectedLevel");
+  saveScore(playerName, moves, timeLeft, level);
+
+  document.getElementById("finalMoves").textContent = moves;
+  document.getElementById("finalTime").textContent = finalTimeText;
+
+  document.getElementById("resultModal").style.display = "flex";
+}
 
   function gameOver() {
     document.getElementById("gameOverMoves").textContent = moves;
     document.getElementById("gameOverModal").style.display = "flex";
   }
 }
+
+//save level with scores
+function saveScore(name, moves, timeLeft, level) {
+  let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+  const score = (timeLeft * 10) - (moves * 2);
+
+  leaderboard.push({
+    name: name || "Player",
+    score: score,
+    moves: moves,
+    time: timeLeft,
+    level: level   
+  });
+
+  leaderboard.sort((a, b) => b.score - a.score);
+
+  localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+}
+
+/*Learderboard FuNction*/
+function loadLeaderboard(selectedLevel = "easy") {
+  const list = document.getElementById("leaderboardList");
+  if (!list) return;
+
+  const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+  const filtered = leaderboard.filter(p => p.level === selectedLevel);
+
+  list.innerHTML = "";
+
+ filtered.slice(0, 10).forEach((player, index) => {
+  const li = document.createElement("li");
+
+  if (index === 0) {
+    li.classList.add("first-place");
+  } //first place user in leaderboard
+
+  const min = String(Math.floor(player.time / 60)).padStart(2, "0");
+  const sec = String(player.time % 60).padStart(2, "0");
+
+  li.innerHTML = `
+    <span>${index + 1}</span>
+    <span class="player">${player.name}</span>
+    <span>${min}:${sec}</span>
+    <span>${player.moves}</span>
+    <span>${player.score}</span>
+  `;
+
+  list.appendChild(li);
+});
+}
+
+function changeLevel(level) {
+  document.querySelectorAll(".level-tab").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  event.target.classList.add("active");
+
+  loadLeaderboard(level);
+}
+
+function switchLevel(level) {
+  loadLeaderboard(level);
+}
+window.addEventListener("DOMContentLoaded", () => {
+  loadLeaderboard("easy");
+});
+
 
 /* NAVIGATION */
 function restartGame() {
@@ -206,6 +280,10 @@ function restartGame() {
 
 function goHome() {
   window.location.href = "index.html";
+}
+
+function playAgain() {
+  window.location.href = "gameChoice.html"; 
 }
 
 
@@ -232,3 +310,5 @@ document.addEventListener("click", () => {
     }).catch(() => {});
   }
 }, { once: true });
+
+

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="css/leaderboard.css">
+</head>
+
+<body>
+
+<nav class="nav">
+  <h1>🏆 Leaderboard</h1>
+  
+  
+</nav>
+
+<section class="leaderboard-section">
+<h3>Choose levels of game to show the result of each</h3>
+<div class="level-tabs">
+  <button class="level-tab active" onclick="changeLevel('easy')">Easy</button>
+  <button class="level-tab" onclick="changeLevel('medium')">Medium</button>
+  <button class="level-tab" onclick="changeLevel('hard')">Hard</button>
+</div>
+  <!-- LEADERBOARD BOX -->
+  <div class="leaderboard-box">
+    
+    <div class="leaderboard-header">
+      <span>RANK</span>
+      <span>PLAYER</span>
+      <span>TIME</span>
+      <span>MOVES</span>
+      <span>SCORE</span>
+    </div>
+
+    <ul id="leaderboardList"></ul>
+  </div>
+
+  <div class="leaderboard-actions">
+   <button class="play-btn" onclick="playAgain()">Play Again</button>
+  <button class="exit-btn" onclick="goHome()">EXIT</button>
+</div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
