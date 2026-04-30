@@ -1,4 +1,4 @@
-/* GLOBAL RESET */
+/* Global reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,7 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* THEME VARIABLES */
+/* Theme variables*/
 :root {
   --bg-color: #f5f6fa;
   --panel-color: #ffffff;
@@ -19,12 +19,12 @@ body.dark {
   --text-color: #f5f5f5;
 }
 
-/* FULL SCREEN */
+/* Full screen */
 .home-page {
   min-height: 100vh;
 }
 
-/* NAVBAR */
+/* nav bar */
 .home-navbar {
   position: fixed;
   top: 0;
@@ -47,7 +47,7 @@ body.dark {
   font-family: 'Comic Sans MS', 'Poppins', sans-serif;
 }
 
-/* NAV BUTTONS */
+/* NAV buttons */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -70,7 +70,7 @@ body.dark {
   background: rgba(255,255,255,0.35);
 }
 
-/* SETTINGS BUTTON */
+/* Setting button */
 .nav-settings {
   width: 50px;
   height: 45px;
@@ -88,7 +88,7 @@ body.dark {
   background: linear-gradient(145deg, #99b6f4, #3a98c4);
 }
 
-/* HERO SECTION */
+/* Hero section*/
 .hero-section {
   min-height: 100vh;
   background:
@@ -139,7 +139,7 @@ body.dark {
   transform: scale(1.08);
 }
 
-/* GIF SECTION */
+/* Gif section*/
 .gif-section {
   padding: 60px 20px 40px;
   background: linear-gradient(135deg, #ff9800, #fa683b);
@@ -162,7 +162,7 @@ body.dark {
 }
 
 
-/* PRO SETTINGS MODAL */
+/* setting modal */
 
 .settings-box,
 .advanced-modal,
@@ -186,7 +186,7 @@ body.dark {
   animation: popUp 0.4s ease;
 }
 
-/* LIGHT MODE FIX */
+/* Light mode */
 body:not(.dark) .settings-pro {
   background: #ffffff;
   color: #222;
@@ -196,7 +196,7 @@ body.dark .settings-pro {
   background: rgba(30,30,30,0.85);
 }
 
-/* TITLE */
+/* title */
 .settings-pro h2 {
   text-align: center;
   margin-bottom: 5px;
@@ -209,7 +209,7 @@ body.dark .settings-pro {
   margin-bottom: 25px;
 }
 
-/* ROW */
+/* row */
 .setting-row {
   display: flex;
   justify-content: space-between;
@@ -224,12 +224,12 @@ body.dark .settings-pro {
   transform: translateY(-2px);
   background: rgba(255,255,255,0.12);
 }
-/* DARK MODE */
+/* dark mode */
 body.dark .setting-row {
   background: rgba(255,255,255,0.05);
 }
 
-/* LEFT SIDE */
+/* Left side */
 .setting-info {
   display: flex;
   align-items: center;
@@ -249,12 +249,11 @@ body.dark .setting-row {
   opacity: 0.7;
 }
 
-/* ICON */
+/* icon */
 .icon {
   font-size: 20px;
 }
-/* TOGGLE SWITCH */
-
+/* Toggle switch */
 .switch {
   position: relative;
   width: 50px;
@@ -298,7 +297,7 @@ body.dark .slider {
   transform: translateX(25px);
 }
 
-/* THEME BUTTONS */
+/* Theme buttons */
 .theme-switch button {
   border: none;
   padding: 6px 12px;
@@ -316,13 +315,13 @@ body.dark .slider {
   background: rgba(255,255,255,0.4);
 }
 
-/* DARK MODE */
+/* Dark modes*/
 body.dark .theme-switch button {
   background: rgba(255,255,255,0.2);
   color: white;
 }
 
-/* NAV BUTTON */
+/* Nav buttons*/
 .nav-action {
   padding: 8px 18px;
   border-radius: 20px;
@@ -340,7 +339,7 @@ body.dark .theme-switch button {
   transform: scale(1.1);
 }
 
-/* HOME BUTTON */
+/* home button*/
 .home-btn {
   padding: 8px 16px;
   border-radius: 20px;
@@ -356,9 +355,7 @@ body.dark .theme-switch button {
   transform: scale(1.1);
 }
 
-/* ADVANCED HOW TO PLAY MODAL */
-
-
+/* Advanced how to play */
 .modal {
   display: none;
   position: fixed;
@@ -472,7 +469,7 @@ body.dark .steps li {
   to { transform: scale(1); }
 }
 
-/* FOOTER */
+/* footer */
 .site-footer {
   background: #2b2b2b;
   color: #f1f1f1;
@@ -505,7 +502,6 @@ body.dark .steps li {
 }
 
 /* Responsive Design */
-
 @media (max-width: 768px) {
   .footer-container {
     grid-template-columns: 1fr;
@@ -514,7 +510,7 @@ body.dark .steps li {
 
 @media (max-width: 768px) {
 
-  /* NAVBAR */
+  /* nav bar */
   .nav-content {
     flex-direction: column;
     gap: 10px;
@@ -536,7 +532,7 @@ body.dark .steps li {
     font-size: 13px;
   }
 
-  /* HERO SECTION */
+  /* Hero section */
   .hero-section .welcome-section {
     flex-direction: column;
     padding: 30px 20px;
@@ -565,7 +561,7 @@ body.dark .steps li {
     width: 100%;
   }
 
-  /* SETTINGS MODAL */
+  /* Setting modalL */
   .settings-pro {
     width: 95%;
     padding: 20px;

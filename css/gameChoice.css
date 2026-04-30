@@ -1,4 +1,4 @@
-/* GLOBAL RESET */
+/* Global reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,7 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* THEME VARIABLES */
+/* Theme variables */
 :root {
   --bg-color: #c3835c;
   --panel-color: #ffffff;
@@ -27,7 +27,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* NAV BAR */
+/* nav bar*/
 .home-navbar {
   position: fixed;
   top: 0;
@@ -89,12 +89,12 @@ body {
   background: linear-gradient(145deg, #99b6f4, #3a98c4);
 }
 
-/* MAIN */
+/* main */
 .game-main {
   padding-top: 100px;
 }
 
-/* GRID */
+/* grid */
 .container {
   padding: 60px;
   border-radius: 15px;
@@ -105,7 +105,7 @@ body {
   gap: 35px;
 }
 
-/* CATEGORY CARD */
+/* Category card */
 .category-card {
   display: flex;
   flex-direction: column;
@@ -121,7 +121,7 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* PREVIEW BOX */
+/* preview box */
 .preview-box {
   width: 160px;
   height: 160px;
@@ -129,7 +129,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* IMAGES */
+/* images */
 .numbers { background: url("../images/numbers.jpg") center/cover no-repeat; }
 .symbols { background: url("../images/mathsymbols.jpg") center/cover no-repeat; }
 .fruits { background: url("../images/fruits.jpg") center/cover no-repeat; }
@@ -139,7 +139,7 @@ body {
 .emojis { background: url("../images/emojis.jpg") center/cover no-repeat; }
 .shapes { background: url("../images/shapes.jpg") center/cover no-repeat; }
 
-/* ADVANCED RIBBON */
+/* advanced button */
 .advanced-card {
   position: relative;
   overflow: hidden;
@@ -157,14 +157,14 @@ body {
   transform: rotate(-45deg);
 }
 
-/* TEXT */
+/* text */
 .left {
   font-size: 20px;
   font-weight: bold;
   color: var(--text-color);
 }
 
-/* BUTTONS */
+/* buttons */
 .level-buttons {
   margin-top: 12px;
   display: flex;
@@ -187,9 +187,8 @@ body {
   transform: scale(1.05);
 }
 
-/* ========================= */
 /* SETTINGS MODAL */
-/* ========================= */
+
 .settings-modal {
   display: none;
   position: fixed;
@@ -215,7 +214,7 @@ body {
   cursor: pointer;
 }
 
-/* SETTINGS BUTTONS */
+/* Setting button*/
 .settings-action {
   width: 100%;
   margin: 10px 0;
@@ -234,7 +233,7 @@ body {
 }
 
 
-/*(HOW TO PLAY) */
+/*how to play*/
 
 .steps {
   list-style: none;
@@ -342,7 +341,7 @@ body.dark .modal-content {
   cursor: pointer;
 }
 
-/* ANIMATION */
+/* animation */
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -352,7 +351,7 @@ body.dark .modal-content {
   to {transform: scale(1);}
 }
 
-/* TABLET */
+/* tablet */
 @media (max-width: 1024px) {
   .nav-content {
     padding: 15px 20px;
@@ -367,7 +366,7 @@ body.dark .modal-content {
   }
 }
 
-/* MOBILE */
+/* mobile */
 @media (max-width: 600px) {
   .nav-content {
     flex-direction: column;

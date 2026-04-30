@@ -1,4 +1,4 @@
-/* GLOBAL RESET */
+/* Global reset*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,7 +14,7 @@ body {
     url("../images/background.jpg") center / cover no-repeat;
 }
 
-/*TOP NAV BAR*/
+/*Top nav bar*/
 .game-navbar {
   position: fixed;
   top: 0;
@@ -45,7 +45,7 @@ body {
 }
 .game-page {
   min-height: 100vh;
-  padding-top: 80px; /* space for navbar */
+  padding-top: 80px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +70,7 @@ body {
   margin-bottom: 18px;
 }
 
-/* AUTO SCALE CARDS BASED ON GRID */
+/* Auto scale cards*/
 .game-grid {
   display: grid;
   gap: 18px;
@@ -80,8 +80,8 @@ body {
   height: clamp(90px, 15vw, 130px);
   font-size: clamp(32px, 6vw, 56px);
 }
-/* CARDS */
-/*CANDY STYLE GAME CARDS */
+/* ards */
+/*Candy style game card */
 .card {
   height: 130px;
   width: 100%;
@@ -184,7 +184,7 @@ body {
     inset 0 2px 4px rgba(0,0,0,0.3);
 }
 
-/*FUN GAME COMPLETE MODAL*/
+/*game complete modal*/
 
 .modal {
   display: none;
@@ -261,7 +261,7 @@ body {
   box-shadow: 0 0 10px rgba(255,87,34,0.5);
 }
 
-/* FUN BUTTONS */
+/* Fun buttons */
 .modal-buttons button {
   padding: 12px 26px;
   border-radius: 30px;
@@ -294,13 +294,13 @@ body {
 .modal-buttons button:active {
   transform: scale(0.95);
 }
-/* POP ANIMATION */
+/* Pop animation */
 @keyframes pop {
   from { transform: scale(0.85); opacity: 0; }
   to   { transform: scale(1); opacity: 1; }
 }
 
-/* SETTINGS MODAL BACKGROUND */
+/* SEettings modal background */
 .settings-modal {
   display: none;
   position: fixed;
@@ -311,7 +311,7 @@ body {
   z-index: 2000;
 }
 
-/* SETTINGS BOX */
+/* SEetting box */
 .settings-box {
   width: 320px;
   background: var(--panel-color);
@@ -325,12 +325,12 @@ body {
 
 
 
-/* TITLE */
+/* title */
 .settings-box h2 {
   margin-bottom: 20px;
 }
 
-/* CLOSE BUTTON */
+/* Close button*/
 .close-settings {
   position: absolute;
   top: 12px;
@@ -339,7 +339,7 @@ body {
   cursor: pointer;
 }
 
-/* SETTINGS BUTTON On nav bar */
+/* Setting button on nav bar */
 .settings-btn {
   position: fixed;
   top: 13px;
@@ -363,7 +363,7 @@ body {
 
 
 
-/* POP ANIMATION */
+/* pop animation */
 @keyframes pop {
   from {
     transform: scale(0.85);
@@ -375,12 +375,12 @@ body {
   }
 }
 
-/* TITLE */
+/* title */
 .settings-box h2 {
   margin-bottom: 20px;
 }
 
-/* CLOSE BUTTON */
+/* Close button */
 .close-settings {
   position: absolute;
   top: 12px;
@@ -389,9 +389,8 @@ body {
   cursor: pointer;
 }
 
-/* ========================= */
-/* SETTINGS MODAL (PRO UI) */
-/* ========================= */
+
+/* Setting modal */
 
 .modal {
   display: none;
@@ -405,7 +404,7 @@ body {
   animation: fadeIn 0.3s ease;
 }
 
-/* MAIN BOX */
+/* Main box*/
 .settings-pro {
   width: 90%;
   max-width: 520px;
@@ -426,19 +425,19 @@ body {
   animation: popUp 0.4s ease;
 }
 
-/* LIGHT MODE FIX */
+/* Light mode fix*/
 body:not(.dark) .settings-pro {
   background: #ffffff;
   color: #222;
   border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* DARK MODE */
+/* Dark mode */
 body.dark .settings-pro {
   background: rgba(30,30,30,0.9);
 }
 
-/* TITLE */
+/* title */
 .settings-pro h2 {
   text-align: center;
   margin-bottom: 5px;
@@ -451,7 +450,6 @@ body.dark .settings-pro {
   margin-bottom: 25px;
 }
 
-/* CLOSE BUTTON */
 .close-btn {
   position: absolute;
   top: 12px;
@@ -460,7 +458,7 @@ body.dark .settings-pro {
   cursor: pointer;
 }
 
-/* ROW */
+/* row */
 .setting-row {
   display: flex;
   justify-content: space-between;
@@ -474,13 +472,12 @@ body.dark .settings-pro {
   transition: 0.3s;
 }
 
-/* HOVER */
+/* hover */
 .setting-row:hover {
   transform: translateY(-2px);
   background: rgba(0,0,0,0.08);
 }
 
-/* DARK MODE ROW */
 body.dark .setting-row {
   background: rgba(255,255,255,0.05);
 }
@@ -489,7 +486,7 @@ body.dark .setting-row:hover {
   background: rgba(255,255,255,0.12);
 }
 
-/* LEFT SIDE */
+/* Left sides */
 .setting-info {
   display: flex;
   align-items: center;
@@ -505,12 +502,12 @@ body.dark .setting-row:hover {
   opacity: 0.7;
 }
 
-/* ICON */
+/* icon */
 .icon {
   font-size: 20px;
 }
 
-/* TOGGLE SWITCH */
+/* Toggle switch*/
 .switch {
   position: relative;
   width: 50px;
@@ -542,12 +539,12 @@ body.dark .setting-row:hover {
   transition: 0.3s;
 }
 
-/* DARK MODE SWITCH */
+/* Dark mode switch */
 body.dark .slider {
   background: #555;
 }
 
-/* ACTIVE */
+/* active */
 .switch input:checked + .slider {
   background: linear-gradient(135deg, #4CAF50, #2ecc71);
 }
@@ -556,7 +553,7 @@ body.dark .slider {
   transform: translateX(25px);
 }
 
-/* NAV BUTTON */
+/* nav button*/
 .nav-action {
   padding: 8px 18px;
   border-radius: 20px;
@@ -574,7 +571,7 @@ body.dark .slider {
   transform: scale(1.1);
 }
 
-/* ANIMATIONS */
+/* animaiton */
 
 @keyframes fadeIn {
   from { opacity: 0; }

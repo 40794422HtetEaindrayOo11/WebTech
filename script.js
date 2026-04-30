@@ -14,11 +14,14 @@ function startGame(category, level) {
   window.location.href = "game.html";
 }
 
-// HOW TO PLAY MODAL
+/*HOW TO PLAY MODAL*/
+
+//open instruction modal
 function openHowToPlay() {
   document.getElementById("howToPlayModal").style.display = "flex";
 }
 
+//close instruction modal
 function closeHowToPlay() {
   document.getElementById("howToPlayModal").style.display = "none";
 }
@@ -51,6 +54,7 @@ const bgMusic = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 let musicPlaying = false;
 
+//toggle background music on/off
 function toggleMusic() {
   if (!bgMusic) return;
 
@@ -68,14 +72,15 @@ function toggleMusic() {
 }
 
 
-/*LOAD SAVED SETTINGS*/
+/*load save setting*/
+//apply saved theme when page loads
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") document.body.classList.add("dark");
 });
 
 
-/* GAME PAGE LOGIC */
+/* Game Page Logic */
 
 const grid = document.getElementById("gameGrid");
 
@@ -94,7 +99,7 @@ if (grid) {
     numbers: ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣","🔟","💯"]
   };
 
-  /* CARD COUNT and Time BY LEVEL */
+  /* card count and time BY level */
   let cardCount = 8;  
   let timeLimit = 120;      // EASY
   if (level === "medium") {
@@ -106,7 +111,7 @@ if (grid) {
     timeLimit = 60;
   }
 
-  /* GRID LAYOUT */
+  /* grid layout */
   if (cardCount === 8) {
     grid.style.gridTemplateColumns = "repeat(4, 1fr)";
   } else if (cardCount === 16) {
@@ -115,18 +120,19 @@ if (grid) {
     grid.style.gridTemplateColumns = "repeat(4, 1fr)"; // 24 cards
   }
 
-  /* SELECT SYMBOLS */
+  /* Select category and shuffle cards */
   const symbols = cardsData[category].slice(0, cardCount / 2);
   let cards = [...symbols, ...symbols];
   cards.sort(() => Math.random() - 0.5);
 
+  //game state variables
   let firstCard = null;
   let lockBoard = false;
   let moves = 0;
   let matchedPairs = 0;
   let remainingTime = timeLimit;
 
-  /* CREATE CARDS */
+  /* Create cards */
   grid.innerHTML = "";
   cards.forEach(symbol => {
     const card = document.createElement("div");
@@ -136,7 +142,7 @@ if (grid) {
     grid.appendChild(card);
   });
 
-  /* Timer Counting section */
+  /* Timer counting logic*/
   const timeInterval = setInterval(()=>{
     remainingTime--;
     const min = String(Math.floor(remainingTime/60)).padStart(2,"0");
@@ -149,6 +155,7 @@ if (grid) {
     }
   }, 1000);
 
+  //card flip and matching logic
   function flipCard(card) {
     if (lockBoard || card.classList.contains("flipped")) return;
 
@@ -181,6 +188,7 @@ if (grid) {
   }
 
 
+  /* game end handles*/ 
 let finalTimeGlobal = 0;
 let movesGlobal = 0;
 
@@ -199,19 +207,20 @@ function endGame() {
   document.getElementById("resultModal").style.display = "flex";
 }
 
+/* save score and show confirmation*/
 function savePlayerScore() {
   const input = document.getElementById("playerNameInput");
   const playerName = input.value.trim() || "Player";
 
   const level = localStorage.getItem("selectedLevel");
 
-  // ✅ correct values
+  //correct values
   saveScore(playerName, movesGlobal, finalTimeGlobal, level);
 
   // close name modal
   document.getElementById("resultModal").style.display = "none";
 
-  // show SUCCESS modal (not alert)
+  // show SUCCESS modal 
   document.getElementById("savedModal").style.display = "flex";
 }
 
@@ -221,7 +230,7 @@ function savePlayerScore() {
   }
 }
 
-//save level with scores
+//save level with scores(Local storage)
 function saveScore(name, moves, timeLeft, level) {
   let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
@@ -291,7 +300,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* NAVIGATION */
+/* navigation funcitons */
 function restartGame() {
   location.reload();
 }
@@ -309,7 +318,7 @@ function playAgain() {
 const winSound = document.getElementById("winSound");
 const clickSound = document.getElementById("clickSound");
 const loseSound = document.getElementById("loseSound");
-
+//play click sounds
 function playClick() {
   if (!clickSound) return;
   clickSound.currentTime = 0;
@@ -318,7 +327,7 @@ function playClick() {
 }
 
 
-/* BROWSER AUDIO UNLOCK */
+/* Browser audio unlock */
 document.addEventListener("click", () => {
   if (bgMusic && !musicPlaying) {
     bgMusic.volume = 0.4;
